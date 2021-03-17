@@ -19,13 +19,22 @@ let numWrong = 0;
 // Loop over the chars in `word` and create divs.
 //
 const createDivsForChars = (word) => {
-  // Replace this with your code
+  // create a for loop that iterates over the letters in the word
+  //   spit out a div element with class="letter-box {letter}" 
+  for (const letter of word) {
+    $('#word-container').append(`<div class="letter-box ${letter}"></div>`);
+  }
+
 };
 
 // Loop over each letter in `ALPHABET` and generate buttons.
 //
 const generateLetterButtons = () => {
-  // Replace this with your code
+  // Loop over ALPHABET string
+  // For each letter, spit out a button
+  for (const letter of ALPHABET) {
+    $('#letter-buttons').append(`<button>${letter.toUpperCase()}</button>`)
+  }
 };
 
 // Set the `disabled` property of `buttonEl` to `true.
@@ -33,13 +42,20 @@ const generateLetterButtons = () => {
 // `buttonEl` is an `HTMLElement` object.
 //
 const disableLetterButton = (buttonEl) => {
-  // Replace this with your code
+  // find the button that the user clicked  
+  // disable that button by turning buttonEL to true
+  // make a variable document.querySelector(element we care about)
+  const button = $(buttonEl);
 };
 
 // Return `true` if `letter` is in the word.
 //
 const isLetterInWord = (letter) => {
-  // Replace this with your code
+  // Declare var to find section[1] == "word-container" section
+  // check if letter is in word
+  // python: return letter in word(bool)
+  // return word.includes(letter);
+  return $(`div.${letter}`)[0] !== undefined;
 };
 
 // Called when `letter` is in word. Update contents of divs with `letter`.
